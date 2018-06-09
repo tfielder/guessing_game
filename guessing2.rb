@@ -1,5 +1,7 @@
 require "pry"
 
+#added a change
+
 class GuessingGame
   attr_reader :rando
   attr_accessor :guess, :option, :menu_option, :hint

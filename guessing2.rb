@@ -17,6 +17,7 @@ class GuessingGame
   def play_game
     while option == "y"
       puts rando
+      generate_hint
       welcome
       while guess != rando
         compare
@@ -73,7 +74,30 @@ class GuessingGame
       option = "n"
     end
   end
+
+  def generate_hint
+    i = 2
+  #Run through loop to determine what the hint should be.
+  #note: ignores 1, and determining the number itself.
+    while i <= rando - 1
+      if (rando % i) == 0
+        @hint = "The random number is divisible by #{i}."
+      end
+      i += 1
+    end
+  #case in which the random number was divisible by 1 and itself, or 2.
+    if hint.empty? == true
+      @hint = "The random number may be prime"
+    end
+  #case in which the random number is 42.
+    if rando == 42
+      @hint = "The answer to the Ultimate Question of Life, the Universe, and Everything"
+    end
+  end
+
 end
+
+
 
 game = GuessingGame.new()
 game.play_game

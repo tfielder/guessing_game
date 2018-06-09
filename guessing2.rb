@@ -1,5 +1,8 @@
 require "pry"
 
+david schwarn 1 hour video ~  15 years ago
+australia building blocks
+
 #added a change
 
 class GuessingGame
@@ -94,10 +97,7 @@ class GuessingGame
       @hint = "The answer to the Ultimate Question of Life, the Universe, and Everything"
     end
   end
-
 end
-
-
 
 game = GuessingGame.new()
 game.play_game
